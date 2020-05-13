@@ -47,7 +47,7 @@ var addTotal = function () {
   var subtotalValues = [];
   $('tbody tr').each(function (i, ele) {
     var price = parseFloat($(ele).children('.price').text());
-    var quantity = parseFloat($(ele).find('.quantity input').val());
+    var quantity = parseFloat($(ele).find('.quantity input').val()) || 0;
     var subtotal = parseFloat((price * quantity).toFixed(2));
     $(ele).children('.subtotal').html(subtotal);
     subtotalValues.push(subtotal);
